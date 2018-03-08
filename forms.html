@@ -1,0 +1,77 @@
+<html>
+<head>
+	<title>Basic Form</title>
+</head>
+<body>
+	<h1>Login</h1>
+	<!-- action is what's gonna happen when you submit the form. POST means take the form data and submit to database -->
+	<form action="https://www.google.com" method="POST"> 
+		<label>Username:<input type="email" placeholder="Click here..." required></label><br> <!-- required keyword makes it so that user cannot submit form without filling this field -->
+		<label>Password:<input type="password" required></label><br>
+		<input type="submit">
+	</form>
+
+	<br>
+
+	<h1>Register</h1>
+	<form>
+
+	<!-- input name is required to attach user input to a name and pass it to server -->
+	<label for="firstName">First Name: </label>
+	<input name="firstName" id="firstName" type="text" placeholder="Venki">
+
+	<label for="lastName">Last Name: </label>
+	<input name="lastName" id="lastName" type="text" placeholder="Smith">
+
+	<br>
+
+	<!-- the key to making all three radio buttons tied to the same input (gender) to to have all of their input tags share the same name -->
+	<!-- input value is required when you want to pass the information of selected button to server. For example, even though the label says 'Male', if the user selects the corresponding radio button & submits the form, no value for gender will be supplied to the server -->
+	<label>Male<input name="gender" value="male" type="radio" required></label> 
+	<label>Female<input name="gender" value="female" type="radio" required></label>
+	<label>Other<input name="gender" value="other" type="radio" required></label>
+
+	<br>
+
+	<label>Email<input name="email" type="email" placeholder="your email" required></label>
+	<label>Password<input name="password" type="password" placeholder="your password" required></label>
+
+	<br>
+
+	<label>Birthday
+		<select name="birthMonth" required>
+			<!-- On 'Month' below, keeping value empty forces user to select one of the other values. You want to disable
+			it because you select doesn't have a placeholder tag. --> 
+			<option value="" selected disabled>Month</option>
+			<option value="Jan">Jan</option>
+			<option value="Feb">Feb</option>
+			<option value="Mar">Mar</option>
+			<option value="Apr">Apr</option>
+		</select>	
+		<select name="birthDay" required>
+			<option selected disabled>Day</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+		</select>
+		<select name="birthYear" required>
+			<option value="" selected disabled>Year</option>
+			<option value="2018">2018</option>
+			<option value="2017">2017</option>
+			<option value="2016">2016</option>
+			<option value="2015">2015</option>
+		</select>
+	</label>
+
+	<br>
+
+	<label>I agree to the terms and conditions<input name="termsAndConditions" type="checkbox" value="true" required</label>
+
+	<br>
+
+	<input type="submit">
+	</form>
+
+</body>
+</html>
