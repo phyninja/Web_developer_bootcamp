@@ -34,7 +34,7 @@
 	<br>
 
 	<label>Email<input name="email" type="email" placeholder="your email" required></label>
-	<label>Password<input name="password" type="password" placeholder="your password" required></label>
+	<label>Password<input name="password" type="password" placeholder="your password" minlength="5" maxlength="10" required></label>
 
 	<br>
 
@@ -49,7 +49,7 @@
 			<option value="Apr">Apr</option>
 		</select>	
 		<select name="birthDay" required>
-			<option selected disabled>Day</option>
+			<option value="" selected disabled>Day</option>
 			<option value="1">1</option>
 			<option value="2">2</option>
 			<option value="3">3</option>
@@ -66,7 +66,7 @@
 
 	<br>
 
-	<label>I agree to the terms and conditions<input name="termsAndConditions" type="checkbox" value="true" required</label>
+	<label>I agree to the terms and conditions<input name="termsAndConditions" type="checkbox" required="true"</label>
 
 	<br>
 
