@@ -1,0 +1,67 @@
+h1{
+	font-size: 50px;
+	margin: 0.5em 1em;
+	text-align: center;
+}
+
+table{
+	padding: 2em;
+	margin-right: auto;
+	margin-left: auto;
+}
+/*
+
+box1 box2 box3
+box4 box5 box6
+box7 box8 box9
+
+*/
+
+/*first pad all the boxes so they look the right size*/
+td{
+	padding: 30px;
+}
+
+
+/*
+draw right border on
+box1
+box4
+box7
+*/
+tr td:nth-of-type(1){
+	border-right: 2px solid black;
+}
+
+
+/*
+draw right border on
+box2
+box5
+box8
+*/
+tr td:nth-of-type(2){
+	border-right: 2px solid black;
+}
+
+
+/*
+draw bottom border on
+box1 box2 box3
+*/
+table { 
+	border-collapse: collapse; 
+}
+tr:nth-child(1) { 
+	border-bottom: 2px solid black; 
+}
+
+
+/*
+draw bottom border on
+box4 box5 box6
+*/
+tr:nth-child(2) { 
+	border-bottom: 2px solid black; 
+}
+
