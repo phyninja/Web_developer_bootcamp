@@ -5,10 +5,12 @@ h1{
 }
 
 table{
-	padding: 2em;
+	padding: 30px;
 	margin-right: auto;
 	margin-left: auto;
 }
+
+
 /*
 
 box1 box2 box3
@@ -17,51 +19,35 @@ box7 box8 box9
 
 */
 
+
 /*first pad all the boxes so they look the right size*/
 td{
-	padding: 30px;
+	padding: 40px;
 }
 
 
 /*
-draw right border on
-box1
-box4
-box7
-*/
-tr td:nth-of-type(1){
-	border-right: 2px solid black;
-}
-
-
-/*
-draw right border on
+draw left and right border on
 box2
 box5
 box8
 */
 tr td:nth-of-type(2){
+	border-left: 2px solid black;
 	border-right: 2px solid black;
 }
 
 
+
 /*
-draw bottom border on
-box1 box2 box3
+draw top and bottom border on
+box4 box5 box6
 */
 table { 
 	border-collapse: collapse; 
 }
-tr:nth-child(1) { 
-	border-bottom: 2px solid black; 
-}
-
-
-/*
-draw bottom border on
-box4 box5 box6
-*/
 tr:nth-child(2) { 
+	border-top: 2px solid black;
 	border-bottom: 2px solid black; 
 }
 
