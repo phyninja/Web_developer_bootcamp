@@ -13,7 +13,7 @@ function updateScore(event){
 				current_scores[i].innerText = new_score;
 
 				//check if new score makes this player a winner
-				var playing_to = document.getElementById('playing_to').value;
+				var playing_to = document.getElementById('playing_to').innerText;
 				if (current_scores[i].innerText == playing_to){
 					disableButtons();
 					current_scores[i].classList.add("winner")
@@ -60,3 +60,9 @@ for (var i=0; i<score_buttons.length; i++){
 	score_buttons[i].addEventListener('click', updateScore)
 }
 
+//Playing instead to
+//As user types the new value into the input box, grab that value and change 'playing_to' 
+//at the same time
+function updatePlayingTo(){
+	document.getElementById('playing_to').innerText = $("#playing_instead_to").val();
+}

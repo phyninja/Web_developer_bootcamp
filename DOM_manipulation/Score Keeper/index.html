@@ -8,19 +8,27 @@
 		<span class="current_score" id = "p1_score">0</span> to <span class="current_score" id = "p2_score">0</span>
 	</h1>
 
-	<p>Playing to: 5</p>
+	<p>Playing to: <span id="playing_to">5</span></p>
 
-	<!-- input to change "Playing to:" -->
-	<input type="number" id="playing_to">
+	<!-- code to change "Playing to:" the function updatePlayingTo is triggered when the user presses down on a key and when the key is released, to get the most up to date value of the input field. See more here: https://stackoverflow.com/questions/11365686/how-to-get-text-of-an-input-text-box-during-onkeypress -->
+	<label>Play instead to: <input type="number" id="playing_instead_to" placeholder="Type a number..." onKeyPress="updatePlayingTo()" onKeyUp="updatePlayingTo()"></label> 
+	
+	<br>
+	<br>
 
 	<!-- input to change scores and reset match -->
-	<input type="button" class="score_button" id="p1_button" value="Player One">
-	<input type="button" class="score_button" id="p2_button" value="Player Two">
-	<input type="button" id="reset_button" value="Reset">
-
+	<div id="controller">	
+		<input type="button" class="score_button" id="p1_button" value="Player One">
+		<input type="button" class="score_button" id="p2_button" value="Player Two">
+		<input type="button" id="reset_button" value="Reset">
+	</div>
 
 
 
 <script type="text/javascript" src="scripts.js"></script>
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous"></script>
 </body>
 </html>
