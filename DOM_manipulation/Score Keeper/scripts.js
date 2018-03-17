@@ -6,37 +6,57 @@ the mouseEvent's target property has details about where the mouseEvent came fro
 This is how we find out that we need to update p1's score or p2's score
 */
 function updateScore(event){
+	for (var i=0; i<score_buttons.length; i++){
+		if (event.target == score_buttons[i]){ //match where the event came from with appropriate button element
+				//update score
+				var new_score = parseInt(current_scores[i].innerText) + 1;
+				current_scores[i].innerText = new_score;
 
-	if (event.target == p1_button){
-		//update score1
-		var new_score1 = parseInt(p1_score.innerText) + 1;
-		p1_score.innerText = new_score1;
+				//check if new score makes this player a winner
+				var playing_to = document.getElementById('playing_to').value;
+				if (current_scores[i].innerText == playing_to){
+					disableButtons();
+					current_scores[i].classList.add("winner")
+				}
+
+				//after finding the right score to update and updating it, break out of the for loop
+				break;
+		}
 	}
-	else if (event.target == p2_button){
-		//update score2
-		var new_score2 = parseInt(p2_score.innerText) + 1;
-		p2_score.innerText = new_score2;
-	}
-	else console.log("updateScore called from unknown object")
 }
 
 
-//TODO write checkScores
-function checkScores(){
-	
+//disables the .score_button(s)
+function disableButtons(){
+	for (var i=0; i<score_buttons.length; i++){
+		score_buttons[i].disabled = true;
+	}
 }
 
 
-//Updating Player 1 score
-var p1_score = document.getElementById('p1_score')
-var p1_button = document.getElementById('p1_button');
-p1_button.addEventListener('click', updateScore) /*p1_button triggered*/
-p1_button.addEventListener('click', checkScores) /*p1_button triggered*/
+//Reset scores when reset button is pressed
+document.getElementById('reset_button').onclick = function(){
+
+	for (var i=0; i<current_scores.length; i++){
+		//set p1_score and p2_score to 0
+		current_scores[i].innerText = 0;
+
+		//remove class 'winner'
+		current_scores[i].classList.remove("winner")
+
+		//reenable buttons
+		score_buttons[i].disabled = false;
+		}
+
+	}
 
 
+//get things in the .current_score and .score_buttons classes as lists
+var current_scores = document.getElementsByClassName('current_score')
+var score_buttons = document.getElementsByClassName('score_button');
 
-//Updating Player 2 score
-var p2_score = document.getElementById('p2_score')
-var p2_button = document.getElementById('p2_button');
-p2_button.addEventListener('click', updateScore)
-p2_button.addEventListener('click', checkScores)
+//for every .score_button, add an event listener to update the score and to check if player won
+for (var i=0; i<score_buttons.length; i++){
+	score_buttons[i].addEventListener('click', updateScore)
+}
+
